@@ -27,7 +27,7 @@ existingSecret: ""
 
 web:
   replicaCount: 2
-  port: 8080
+  port: 8000
   autoscaling:
     enabled: false
     minReplicas: 2
