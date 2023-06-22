@@ -186,4 +186,4 @@ redis:
 postgresql:
   enabled: true
   auth:
-   postgresqlPassword: "password"
+   postgresPassword: "password"
