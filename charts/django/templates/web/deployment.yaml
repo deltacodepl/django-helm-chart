@@ -68,7 +68,7 @@ spec:
                 fieldRef:
                   fieldPath: status.podIP
 {{- if .Values.postgresql.enabled }}
-            - name: DATABASE_PASSWORD
+            - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ default (include "django.postgresql.fullname" .) .Values.postgresql.auth.existingSecret }}

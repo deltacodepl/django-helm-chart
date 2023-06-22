@@ -51,7 +51,7 @@ spec:
             - name: SERVER_ROLE
               value: "worker"
 {{- if .Values.postgresql.enabled }}
-            - name: DATABASE_PASSWORD
+            - name: DB _PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ default (include "django.postgresql.fullname" .) .Values.postgresql.auth.existingSecret }}
