@@ -3,6 +3,25 @@ entries:
   django:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-06-22T19:44:10.379137853Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.5.8
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~17.11.6
+    description: Generic Django + Celery Helm Chart
+    digest: 33552133418b743f0f3e0cb1d7d496b57f4f2a22e371b9eb8fc6ea2ec6e54822
+    name: django
+    type: application
+    urls:
+    - https://github.com/deltacodepl/django-helm-chart/releases/download/django-0.3.3/django-0.3.3.tgz
+    version: 0.3.3
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-06-22T19:08:34.356442994Z"
     dependencies:
     - condition: postgresql.enabled
@@ -39,4 +58,4 @@ entries:
     urls:
     - https://github.com/deltacodepl/django-helm-chart/releases/download/django-0.3.1/django-0.3.1.tgz
     version: 0.3.1
-generated: "2023-06-22T19:08:34.356458294Z"
+generated: "2023-06-22T19:44:10.379151953Z"
