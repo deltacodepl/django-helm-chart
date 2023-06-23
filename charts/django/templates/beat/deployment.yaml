@@ -51,7 +51,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ default (include "django.postgresql.fullname" .) .Values.postgresql.auth.existingSecret }}
-                  key: postgres-password
+                  key: password
 {{- end }}
           envFrom:
             - secretRef:

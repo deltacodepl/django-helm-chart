@@ -35,6 +35,10 @@ web:
     maxReplicas: 10
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
+  args:
+    - python manage.py makemigrations;
+      python manage.py migrate;
+      gunicorn --bind 0.0.0.0:8000 -w 4 --limit-request-line 6094 --access-logfile - config.wsgi:application
 
   budget:
     minAvailable: 1 # Ignored when replicaCount is 1
@@ -187,7 +191,7 @@ redis:
 postgresql:
   enabled: true
   auth:
-   postgresPassword: "password"
+   postgresPassword: "postgres-password"
    username: "user"
    password: "password"
    database: "database"

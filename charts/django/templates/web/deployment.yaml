@@ -36,6 +36,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           {{- if .Values.web.args }}
+          command: ["/bin/sh", "-c"]
           args: {{- toYaml .Values.web.args | nindent 10}}
           {{- end }}
           securityContext:
@@ -67,12 +68,14 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
+            - name: DJANGO_ALLOWED_HOSTS
+              value: '${hostname}, $(POD_IP)'
 {{- if .Values.postgresql.enabled }}
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ default (include "django.postgresql.fullname" .) .Values.postgresql.auth.existingSecret }}
-                  key: postgres-password
+                  key: password
 {{- end }}
           envFrom:
             - secretRef:
