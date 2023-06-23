@@ -16,10 +16,11 @@ preInstall:
   activeDeadlineSeconds: 900
 
 env:
-  normal: {}
+  normal:
+    DEBUG : "True"
   secret:
     SECRET_KEY: '#p7nnxb7y^yq8ahfw5%$xh=f8=&1y*5+a5($8w_f7kw!-qig(j'
-    DEBUG: 'True'
+
     # DATABASE_URL:
     # REDIS_URL:
 
@@ -187,3 +188,6 @@ postgresql:
   enabled: true
   auth:
    postgresPassword: "password"
+   username: "user"
+   password: "password"
+   database: "database"

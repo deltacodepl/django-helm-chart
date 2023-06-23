@@ -111,6 +111,15 @@ Set postgresql username
 {{- end -}}
 
 {{/*
+Set postgresql password
+*/}}
+{{- define "django.postgresql.password" -}}
+{{- if .Values.postgresql.enabled -}}
+{{ .Values.postgresql.auth.password | default "password" }}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Set postgresql name
 */}}
 {{- define "django.postgresql.name" -}}
