@@ -36,6 +36,12 @@ web:
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
   args:
+    while true; do
+      echo -en '\n';
+      printenv POD_IP;
+      printenv DJANGO_ALLOWED_HOSTS;
+      sleep 5;
+    done;
     - python manage.py makemigrations;
       python manage.py migrate;
       gunicorn --bind 0.0.0.0:8000 -w 4 --limit-request-line 6094 --access-logfile - config.wsgi:application

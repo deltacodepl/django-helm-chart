@@ -68,6 +68,10 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
+            - name: HOST_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
             - name: DJANGO_ALLOWED_HOSTS
               value: '${hostname}, $(POD_IP)'
 {{- if .Values.postgresql.enabled }}
