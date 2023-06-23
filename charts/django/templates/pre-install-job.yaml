@@ -38,7 +38,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: {{ include "django.postgresql.fullname" . }}
-                key: DB_PASSWORD
+                key: postgres-password
 {{- end }}
           - name: SECRET_KEY
             value: {{ required "env.secret.SECRET_KEY is a required value." .Values.env.secret.SECRET_KEY }}
