@@ -75,7 +75,7 @@ web:
     failureThreshold: 5
     initialDelaySeconds: 5
     timeoutSeconds: 2
-    path: "healthz/"
+    path: "/"
   readinessProbe:
     failureThreshold: 10
     initialDelaySeconds: 5
