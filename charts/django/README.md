@@ -17,7 +17,7 @@ def health(request):
     return HttpResponse("ok", content_type="text/plain")
 
 urlpatterns = [
-    path("_health/", health),
+    path("healthz/", health),
 ...
 ```
 

@@ -10,14 +10,14 @@ This chart supports a web plus optional celery and beat deployments. Be prepared
 
 Django settings will be managed by environment variables. `django-environ` works well for this and can parse the DATABASE_URL connection string. This chart expects SECRET_KEY and DATABASE_URL variables.
 
-Kubernetes works best when it is able to determine application health. Your Django app should have a `/_health/` view such as
+Kubernetes works best when it is able to determine application health. Your Django app should have a `/healthz/` view such as
 
 ```
 def health(request):
     return HttpResponse("ok", content_type="text/plain")
 
 urlpatterns = [
-    path("_health/", health),
+    path("healthz/", health),
 ...
 ```
 
