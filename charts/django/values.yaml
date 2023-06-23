@@ -75,12 +75,12 @@ web:
     failureThreshold: 5
     initialDelaySeconds: 5
     timeoutSeconds: 2
-    path: "/admin"
+    path: "/healthz"
   readinessProbe:
     failureThreshold: 10
     initialDelaySeconds: 5
     timeoutSeconds: 2
-    path: "/readiness/"
+    path: "/readiness"
   service:
     type: LoadBalancer
     port: 80
