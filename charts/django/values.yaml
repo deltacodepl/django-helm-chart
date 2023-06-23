@@ -82,7 +82,7 @@ web:
     timeoutSeconds: 2
     path: "/readiness/"
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 80
 
   ingress:
