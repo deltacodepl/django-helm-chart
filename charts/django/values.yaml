@@ -80,7 +80,7 @@ web:
     failureThreshold: 10
     initialDelaySeconds: 5
     timeoutSeconds: 2
-    path: "/rediness/"
+    path: "/readiness/"
   service:
     type: ClusterIP
     port: 80

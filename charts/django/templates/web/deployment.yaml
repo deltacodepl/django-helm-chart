@@ -57,7 +57,7 @@ spec:
           readinessProbe:
             failureThreshold: {{ .Values.web.readinessProbe.failureThreshold }}
             httpGet:
-              path: {{ .Values.web.readinessProbe.path | default "/rediness/" }}
+              path: {{ .Values.web.readinessProbe.path | default "/readiness/" }}
               port: {{ .Values.web.port | default 8080 }}
             initialDelaySeconds: {{ .Values.web.readinessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.web.readinessProbe.timeoutSeconds }}
