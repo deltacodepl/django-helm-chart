@@ -50,14 +50,14 @@ spec:
           livenessProbe:
             failureThreshold: {{ .Values.web.livenessProbe.failureThreshold }}
             httpGet:
-              path: {{ .Values.web.livenessProbe.path | default "/_health/" }}
+              path: {{ .Values.web.livenessProbe.path | default "/healthz/" }}
               port: {{ .Values.web.port | default 8080 }}
             initialDelaySeconds: {{ .Values.web.livenessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.web.livenessProbe.timeoutSeconds }}
           readinessProbe:
             failureThreshold: {{ .Values.web.readinessProbe.failureThreshold }}
             httpGet:
-              path: {{ .Values.web.readinessProbe.path | default "/_health/" }}
+              path: {{ .Values.web.readinessProbe.path | default "/healthz/" }}
               port: {{ .Values.web.port | default 8080 }}
             initialDelaySeconds: {{ .Values.web.readinessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.web.readinessProbe.timeoutSeconds }}
