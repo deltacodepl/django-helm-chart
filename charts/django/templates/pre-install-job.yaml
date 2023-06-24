@@ -28,8 +28,14 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
           - python manage.py migrate --no-input;
-            python manage.py createsuperuser --username admin --email {{ .Values.env.normal.SUPERUSER_EMAIL }} --noinput || true;
+            python manage.py createsuperuser --noinput || true;
         env:
+          - name: DJANGO_SUPERUSER_USERNAME
+            value: {{ .Values.env.normal.DJANGO_SUPERUSER_USERNAME }}
+          - name: DJANGO_SUPERUSER_EMAIL
+            value: {{ .Values.env.normal.DJANGO_SUPERUSER_EMAIL }}  
+          - name: DJANGO_SUPERUSER_PASSWORD
+            value: {{ .Values.env.normal.DJANGO_SUPERUSER_PASSWORD }}
           - name: DEBUG
             value: "False"
 {{- if .Values.env.secret.DATABASE_URL }}
