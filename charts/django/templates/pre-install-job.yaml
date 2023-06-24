@@ -29,6 +29,7 @@ spec:
         args:
           - python manage.py migrate --no-input
             python manage.py createsuperuser --email {{ .Values.env.normal.SUPERUSER_EMAIL }} --password 'Nat33ail' --noinput || true
+            echo -n 'user created'
         env:
           - name: DEBUG
             value: "False"
