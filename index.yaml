@@ -58,4 +58,23 @@ entries:
     urls:
     - https://github.com/deltacodepl/django-helm-chart/releases/download/django-0.3.1/django-0.3.1.tgz
     version: 0.3.1
-generated: "2023-06-22T19:44:10.379151953Z"
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-06-24T04:34:19.268747699Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.5.8
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~17.11.6
+    description: Generic Django + Celery Helm Chart
+    digest: 40a72f8f6ea7468760d2a484cd004b8ec3d3f157d0fce4b18f3f197a8cfb6cd7
+    name: django
+    type: application
+    urls:
+    - https://github.com/deltacodepl/django-helm-chart/releases/download/django-0.1/django-0.1.tgz
+    version: "0.1"
+generated: "2023-06-24T04:34:19.268766599Z"
